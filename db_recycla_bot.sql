@@ -18,7 +18,7 @@ CREATE DATABASE db_recycla_bot;
 USE db_recycla_bot;
 
 CREATE TABLE tb_people (
-user_id INT PRIMARY KEY NOT NULL,
+user_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 name VARCHAR(100) NOT NULL,
 last_name VARCHAR(100) NOT NULL,
 email VARCHAR(100) UNIQUE NOT NULL,
@@ -30,13 +30,13 @@ description TEXT
 );
 
 CREATE TABLE tb_favorites (
-favorite_id INT PRIMARY KEY NOT NULL,
+favorite_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 fk_user_id INT NOT NULL,
 fk_module_id INT NOT NULL
 );
 
 CREATE TABLE tb_modules (
-module_id INT PRIMARY KEY NOT NULL,
+module_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 module_name VARCHAR(100) NOT NULL,
 description TEXT NOT NULL
 fk_notice_id INT
@@ -44,17 +44,17 @@ fk_recycling_points_id INT
 );
 
 CREATE TABLE tb_admin (
-admin_id INT PRIMARY KEY NOT NULL,
+admin_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 fk_user_id INT NOT NULL
 );
 
 CREATE TABLE tb_recyclers (
-recycler_id INT PRIMARY KEY NOT NULL,
+recycler_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 fk_user_id INT NOT NULL
 );
 
 CREATE TABLE tb_notification (
-notification_id INT PRIMARY KEY NOT NULL,
+notification_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 fk_user_id INT NOT NULL,
 message TEXT, NOT NULL
 fk_module_id INT NOT NULL
@@ -62,21 +62,21 @@ link VARCHAR(256)
 );
 
 CREATE TABLE tb_chatbot (
-qa_id INT PRIMARY KEY NOT NULL,
+qa_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 question TEXT NOT NULL,
 fk_answer_id INT NOT NULL,
 link VARCHAR(256)
 );
 
 CREATE TABLE tb_answers(
-answer_id INT PRIMARY KEY NOT NULL,
+answer_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 fk_user_id INT NOT NULL,
 status VARCHAR(20) NOT NULL,
 comment TEXT
 );
 
 CREATE TABLE tb_comments(
-comment_id INT PRIMARY KEY NOT NULL,
+comment_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 comment TEXT NOT NULL,
 comment_date DATETIME NOT NULL,
 fk_user_id INT NOT NULL,
@@ -84,14 +84,14 @@ fk_module_id INT NOT NULL
 );
 
 CREATE TABLE tb_news (
-news_id INT PRIMARY KEY NOT NULL,
+news_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 title VARCHAR (130) NOT NULL,
 content TEXT NOT NULL,
 publication_date DATETIME NOT NULL
 );
 
 CREATE TABLE tb_recycling_points (
-point_id INT PRIMARY KEY NOT NULL,
+point_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 name VARCHAR(100) NOT NULL,
 schedule TEXT NOT NULL,
 fk_recycler_id INT NOT NULL,
@@ -104,13 +104,13 @@ fk_price_table_id INT NOT NULL
 );
 
 CREATE TABLE tb_price_tables (
-price_table_id INT PRIMARY KEY NOT NULL,
+price_table_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 fk_material_id INT NOT NULL,
 price DECIMAL NOT NULL
 );
 
 CREATE TABLE tb_materials (
-material_id INT PRIMARY KEY NOT NULL,
+material_id INT KEY NOT NULL AUTO_INCREMENT PRIMARY,
 name VARCHAR(60) NOT NULL
 );
 
