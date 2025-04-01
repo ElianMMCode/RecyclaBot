@@ -11,7 +11,7 @@ cambiar contraseña usuario
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'SENA2025';
 
-*/crear base de datos
+#crear base de datos
 
 CREATE DATABASE db_recycla_bot;
 
