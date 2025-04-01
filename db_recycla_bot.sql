@@ -62,7 +62,7 @@ fk_people_id INT NOT NULL
 CREATE TABLE tb_notification (
 notification_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 fk_people_id INT NOT NULL,
-message TEXT, NOT NULL,
+message TEXT NOT NULL,
 fk_module_id INT NOT NULL,
 link VARCHAR(256)
 );
