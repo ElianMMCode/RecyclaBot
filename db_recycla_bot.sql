@@ -9,7 +9,7 @@ GRANT ALL PRIVILEGES ON db_recycla_bot TO 'admin'@'localhost';
 
 cambiar contraseña usuario
 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'SENA2025';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'SENA2025';*/
 
 #crear base de datos
 
