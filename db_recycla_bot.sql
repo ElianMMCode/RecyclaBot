@@ -9,8 +9,9 @@ GRANT ALL PRIVILEGES ON db_recycla_bot TO 'admin'@'localhost';
 
 cambiar contraseña usuario
 
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'SENA2025';*/
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'SENA2025';
 
+*/
 #crear base de datos
 
 CREATE DATABASE db_recycla_bot;
@@ -62,7 +63,7 @@ fk_people_id INT NOT NULL
 CREATE TABLE tb_notification (
 notification_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 fk_people_id INT NOT NULL,
-message TEXT NOT NULL,
+message TEXT, NOT NULL,
 fk_module_id INT NOT NULL,
 link VARCHAR(256)
 );
@@ -139,5 +140,5 @@ ALTER TABLE tb_modules ADD FOREIGN KEY (fk_notice_id) REFERENCES tb_publications
 ALTER TABLE tb_modules ADD FOREIGN KEY (fk_recycling_points_id) REFERENCES tb_recycling_points (point_id);
 
 
-
+mysqldump -h localhost -u root -P 3306 -p --no-data db_recycla_bot > ~/mer_recycla_bot.sql
 
