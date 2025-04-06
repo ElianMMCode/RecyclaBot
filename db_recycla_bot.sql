@@ -33,7 +33,7 @@ longitude INT,
 adress VARCHAR(150),
 profile_imag VARCHAR (255),
 description TEXT,
-Estado ENUM('activo', 'inactivo', 'bloqueado', 'eliminado') NOT NULL
+Estado ENUM('activo', 'suspendido', 'inactivo')NOT NULL
 );
 
 CREATE TABLE tb_document_type(
@@ -64,6 +64,7 @@ weight DECIMAL NOT NULL,
 max_capacity DECIMAL NOT NULL,
 current_capacity DECIMAL NOT NULL,
 last_update DATETIME NOT NULL
+storage_condition ENUM('full', 'empty', 'low') NOT NULL
 );
 
 CREATE TABLE tb_update_inventory(
@@ -72,7 +73,8 @@ fk_inventory_id INT UNIQUE NOT NULL,
 fk_user_id INT UNIQUE NOT NULL,
 update_date DATETIME NOT NULL,
 received_quantity DECIMAL NOT NULL,
-storage_condition VARCHAR(20)
+unit ENUM('Kg', 'unidad', 'lb') NOT NULL,
+storage_condition ENUM('full', 'empty', 'low'
 );
 
 CREATE TABLE tb_materials (
@@ -116,7 +118,6 @@ CREATE TABLE tb_comments(
 comment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 comment TEXT NOT NULL,
 comment_date DATETIME NOT NULL,
-fk_citizen_id INT NOT NULL,
 fk_source_id INT NOT NULL
 );
 
