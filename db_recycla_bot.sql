@@ -133,7 +133,7 @@ notification_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 fk_citizen_id INT NOT NULL,
 message TEXT NOT NULL,
 send_date DATETIME NOT NULL,
-fk_module_id INT NOT NULL,
+fk_source_id INT NOT NULL,
 link VARCHAR(255),
 fk_publication_id INT NOT NULL
 );
