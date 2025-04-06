@@ -63,7 +63,7 @@ unit ENUM('Kg', 'unidad', 'lb') NOT NULL,
 weight DECIMAL NOT NULL,
 max_capacity DECIMAL NOT NULL,
 current_capacity DECIMAL NOT NULL,
-last_update DATETIME NOT NULL
+last_update DATETIME NOT NULL,
 storage_condition ENUM('full', 'empty', 'low') NOT NULL
 );
 
@@ -74,7 +74,7 @@ fk_user_id INT UNIQUE NOT NULL,
 update_date DATETIME NOT NULL,
 received_quantity DECIMAL NOT NULL,
 unit ENUM('Kg', 'unidad', 'lb') NOT NULL,
-storage_condition ENUM('full', 'empty', 'low'
+storage_condition ENUM('full', 'empty', 'low')
 );
 
 CREATE TABLE tb_materials (
@@ -116,6 +116,7 @@ description TEXT
 
 CREATE TABLE tb_comments(
 comment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+fk_citizen_id INT UNIQUE NOT NULL,
 comment TEXT NOT NULL,
 comment_date DATETIME NOT NULL,
 fk_source_id INT NOT NULL
