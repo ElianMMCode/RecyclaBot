@@ -212,6 +212,7 @@ ALTER TABLE tb_source ADD FOREIGN KEY (fk_ECA_point_id) REFERENCES tb_ECA_points
 
 #tb_chatbot
 ALTER TABLE tb_chatbot ADD FOREIGN KEY (fk_answer_id) REFERENCES tb_answers (answer_id);
+ALTER TABLE tb_chatbot ADD FOREIGN KEY (fk_source_id) REFERENCES tb_source (source_id);
 
 #tb_chatbot_unanswered
 ALTER TABLE tb_chatbot_unanswered ADD FOREIGN KEY (fk_citizen_id) REFERENCES tb_citizens (citizen_id);
